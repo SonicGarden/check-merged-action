@@ -2,7 +2,7 @@ import * as core from '@actions/core'
 import * as github from '@actions/github'
 import execa from 'execa'
 
-const comment = async (log: string): Promise<void> => {
+const comment = async (log: string, originBranch: string): Promise<void> => {
   const pullRequestId = github.context.issue.number
   if (!pullRequestId) {
     throw new Error('Cannot find the PR id.')
@@ -19,9 +19,16 @@ const comment = async (log: string): Promise<void> => {
     issue_number: pullRequestId,
     body: `# :anger: Not merged!
 
+[:octocat: New pull request](https://github.com/${process.env.GITHUB_REPOSITORY}/compare/${originBranch}...${process.env.GITHUB_HEAD_REF})
+
+<details>
+<summary>Log</summary>
+
 ${code}
 ${log}
 ${code}
+
+</details>
 `
   })
 }
@@ -37,7 +44,7 @@ async function run(): Promise<void> {
     core.debug(stdout)
 
     if (stdout.length > 0) {
-      await comment(stdout)
+      await comment(stdout, originBranch)
     }
   } catch (error) {
     core.setFailed(error.message)

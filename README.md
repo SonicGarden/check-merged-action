@@ -30,4 +30,4 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
 ```
 
-![Demo](https://i.gyazo.com/d278717f8a085782c7e0f3056625954f.png)
+![Demo](https://i.gyazo.com/1a7f81b217002632e64268a3407777a1.png)
