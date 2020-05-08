@@ -1,6 +1,9 @@
 name: "Check merged"
 description: "Check if it has been merged."
 author: aki77
+branding:
+  icon: git-branch
+  color: green
 inputs:
   originBranch:
     description: Origin branch
