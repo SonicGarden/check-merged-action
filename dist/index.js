@@ -2347,7 +2347,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const core = __importStar(__webpack_require__(470));
 const github = __importStar(__webpack_require__(469));
 const execa_1 = __importDefault(__webpack_require__(955));
-const comment = (log) => __awaiter(void 0, void 0, void 0, function* () {
+const comment = (log, originBranch) => __awaiter(void 0, void 0, void 0, function* () {
     const pullRequestId = github.context.issue.number;
     if (!pullRequestId) {
         throw new Error('Cannot find the PR id.');
@@ -2362,9 +2362,16 @@ const comment = (log) => __awaiter(void 0, void 0, void 0, function* () {
         issue_number: pullRequestId,
         body: `# :anger: Not merged!
 
+[:octocat: New pull request](https://github.com/${process.env.GITHUB_REPOSITORY}/compare/${originBranch}...${process.env.GITHUB_HEAD_REF})
+
+<details>
+<summary>Log</summary>
+
 ${code}
 ${log}
 ${code}
+
+</details>
 `
     });
 });
@@ -2377,7 +2384,7 @@ function run() {
             const { stdout } = yield execa_1.default.command(`git log HEAD ^origin/${originBranch} --no-merges`);
             core.debug(stdout);
             if (stdout.length > 0) {
-                yield comment(stdout);
+                yield comment(stdout, originBranch);
             }
         }
         catch (error) {
