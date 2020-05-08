@@ -22,11 +22,12 @@ on:
 
 jobs:
   check-staging:
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-    - uses: SonicGarden/check-merged-action@v1
-      with:
-        token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: SonicGarden/check-merged-action@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
 ```
 
 ![Demo](https://i.gyazo.com/d278717f8a085782c7e0f3056625954f.png)
