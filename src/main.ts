@@ -1,16 +1,44 @@
 import * as core from '@actions/core'
-import {wait} from './wait'
+import * as github from '@actions/github'
+import execa from 'execa'
+
+const comment = async (log: string): Promise<void> => {
+  const pullRequestId = github.context.issue.number
+  if (!pullRequestId) {
+    throw new Error('Cannot find the PR id.')
+  }
+
+  const code = '```'
+  const issues = new github.GitHub(core.getInput('token', {required: true}))
+    .issues
+
+  await issues.createComment({
+    owner: github.context.repo.owner,
+    repo: github.context.repo.repo,
+    // eslint-disable-next-line @typescript-eslint/camelcase
+    issue_number: pullRequestId,
+    body: `# Not merged staging!
+
+${code}
+${log}
+${code}
+`
+  })
+}
 
 async function run(): Promise<void> {
   try {
-    const ms: string = core.getInput('milliseconds')
-    core.debug(`Waiting ${ms} milliseconds ...`)
+    const stagingBranch: string = core.getInput('stagingBranch', {
+      required: true
+    })
+    const {stdout} = await execa.command(
+      `git log HEAD ^origin/${stagingBranch} --no-merges`
+    )
+    core.debug(stdout)
 
-    core.debug(new Date().toTimeString())
-    await wait(parseInt(ms, 10))
-    core.debug(new Date().toTimeString())
-
-    core.setOutput('time', new Date().toTimeString())
+    if (stdout.length > 0) {
+      await comment(stdout)
+    }
   } catch (error) {
     core.setFailed(error.message)
   }
