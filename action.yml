@@ -1,10 +1,14 @@
-name: 'Your name here'
-description: 'Provide a description here'
-author: 'Your name or organization here'
+name: "Check staging"
+description: "Check if staging has been merged."
+author: aki77
 inputs:
-  myInput:              # change this
-    description: 'input description here'
-    default: 'default value if applicable'
+  stagingBranch:
+    description: staging branch
+    default: staging
+    required: false
+  token:
+    description: "Github token"
+    required: true
 runs:
-  using: 'node12'
-  main: 'dist/index.js'
+  using: "node12"
+  main: "dist/index.js"
