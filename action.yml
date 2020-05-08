@@ -1,9 +1,9 @@
-name: "Check staging"
-description: "Check if staging has been merged."
+name: "Check merged"
+description: "Check if it has been merged."
 author: aki77
 inputs:
-  stagingBranch:
-    description: staging branch
+  originBranch:
+    description: Origin branch
     default: staging
     required: false
   token:
