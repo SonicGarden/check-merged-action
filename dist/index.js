@@ -2360,7 +2360,7 @@ const comment = (log) => __awaiter(void 0, void 0, void 0, function* () {
         repo: github.context.repo.repo,
         // eslint-disable-next-line @typescript-eslint/camelcase
         issue_number: pullRequestId,
-        body: `# Not merged staging!
+        body: `# :anger: Not merged!
 
 ${code}
 ${log}
@@ -2371,10 +2371,10 @@ ${code}
 function run() {
     return __awaiter(this, void 0, void 0, function* () {
         try {
-            const stagingBranch = core.getInput('stagingBranch', {
+            const originBranch = core.getInput('originBranch', {
                 required: true
             });
-            const { stdout } = yield execa_1.default.command(`git log HEAD ^origin/${stagingBranch} --no-merges`);
+            const { stdout } = yield execa_1.default.command(`git log HEAD ^origin/${originBranch} --no-merges`);
             core.debug(stdout);
             if (stdout.length > 0) {
                 yield comment(stdout);

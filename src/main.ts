@@ -17,7 +17,7 @@ const comment = async (log: string): Promise<void> => {
     repo: github.context.repo.repo,
     // eslint-disable-next-line @typescript-eslint/camelcase
     issue_number: pullRequestId,
-    body: `# Not merged staging!
+    body: `# :anger: Not merged!
 
 ${code}
 ${log}
@@ -28,11 +28,11 @@ ${code}
 
 async function run(): Promise<void> {
   try {
-    const stagingBranch: string = core.getInput('stagingBranch', {
+    const originBranch: string = core.getInput('originBranch', {
       required: true
     })
     const {stdout} = await execa.command(
-      `git log HEAD ^origin/${stagingBranch} --no-merges`
+      `git log HEAD ^origin/${originBranch} --no-merges`
     )
     core.debug(stdout)
 
