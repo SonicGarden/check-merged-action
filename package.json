@@ -27,6 +27,7 @@
   "dependencies": {
     "@actions/core": "^1.2.0",
     "@actions/github": "^2.2.0",
+    "@aki77/actions-replace-comment": "file:/Users/aki/src/github.com/aki77/actions-replace-comment",
     "execa": "^4.0.0"
   },
   "devDependencies": {
