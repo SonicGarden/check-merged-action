@@ -23,8 +23,10 @@
   dependencies:
     tunnel "0.0.6"
 
-"@aki77/actions-replace-comment@file:../../aki77/actions-replace-comment":
+"@aki77/actions-replace-comment@^0.3.0":
   version "0.3.0"
+  resolved "https://registry.yarnpkg.com/@aki77/actions-replace-comment/-/actions-replace-comment-0.3.0.tgz#91699a896277af5918fde023f3738fa031bd427b"
+  integrity sha512-XuH4R5UbHmWPRLzPx3KIpnNh9AF02FLB1L6RA6FxGAxvK/f9VlB4NK8IyWJlxiDUB/kEXhhXMQWmTYjBorW1+g==
   dependencies:
     "@octokit/rest" "^17.8.0"
 

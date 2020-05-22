@@ -1,8 +1,8 @@
 {
-  "name": "typescript-action",
-  "version": "1.0.2",
+  "name": "check-merged-action",
+  "version": "1.0.3",
   "private": true,
-  "description": "TypeScript template action",
+  "description": "Check if it has been merged.",
   "main": "lib/main.js",
   "scripts": {
     "build": "tsc",
@@ -15,19 +15,19 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/actions/typescript-action.git"
+    "url": "git+https://github.com/SonicGarden/check-merged-action.git"
   },
   "keywords": [
     "actions",
     "node",
     "setup"
   ],
-  "author": "YourNameOrOrganization",
+  "author": "aki77",
   "license": "MIT",
   "dependencies": {
     "@actions/core": "^1.2.0",
     "@actions/github": "^2.2.0",
-    "@aki77/actions-replace-comment": "file:/Users/aki/src/github.com/aki77/actions-replace-comment",
+    "@aki77/actions-replace-comment": "^0.3.0",
     "execa": "^4.0.0"
   },
   "devDependencies": {
