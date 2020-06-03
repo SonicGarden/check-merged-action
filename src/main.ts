@@ -59,6 +59,9 @@ async function run(): Promise<void> {
     const originBranch: string = core.getInput('originBranch', {
       required: true
     })
+
+    await execa.command(`git fetch origin ${originBranch}`)
+
     const {stdout} = await execa.command(
       `git log HEAD ^origin/${originBranch} --no-merges`
     )
