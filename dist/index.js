@@ -2534,6 +2534,7 @@ function run() {
             const originBranch = core.getInput('originBranch', {
                 required: true
             });
+            yield execa_1.default.command(`git fetch origin ${originBranch}`);
             const { stdout } = yield execa_1.default.command(`git log HEAD ^origin/${originBranch} --no-merges`);
             core.debug(stdout);
             if (stdout.length > 0) {
