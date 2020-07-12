@@ -50,7 +50,8 @@ const deletePrComment = async (): Promise<void> => {
     repo: github.context.repo.repo,
     // eslint-disable-next-line @typescript-eslint/camelcase
     issue_number: pullRequestId,
-    startsWith: TITLE
+    body: TITLE,
+    startsWith: true
   })
 }
 

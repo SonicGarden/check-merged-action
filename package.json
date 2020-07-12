@@ -1,6 +1,6 @@
 {
   "name": "check-merged-action",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "private": true,
   "description": "Check if it has been merged.",
   "main": "lib/main.js",
@@ -26,9 +26,9 @@
   "license": "MIT",
   "dependencies": {
     "@actions/core": "^1.2.0",
-    "@actions/github": "^2.2.0",
-    "@aki77/actions-replace-comment": "^0.3.0",
-    "execa": "^4.0.0"
+    "@actions/github": "^4.0.0",
+    "@aki77/actions-replace-comment": "^0.4.1",
+    "execa": "^4.0.3"
   },
   "devDependencies": {
     "@types/jest": "^24.0.23",
@@ -44,6 +44,6 @@
     "js-yaml": "^3.13.1",
     "prettier": "^1.19.1",
     "ts-jest": "^24.2.0",
-    "typescript": "^3.6.4"
+    "typescript": "^3.9.6"
   }
 }
