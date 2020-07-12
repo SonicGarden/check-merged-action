@@ -1,10 +1,17 @@
-name: 'Your name here'
-description: 'Provide a description here'
-author: 'Your name or organization here'
+name: "Check merged"
+description: "Check if it has been merged."
+author: aki77
+branding:
+  icon: git-branch
+  color: green
 inputs:
-  myInput:              # change this
-    description: 'input description here'
-    default: 'default value if applicable'
+  originBranch:
+    description: Origin branch
+    default: staging
+    required: false
+  token:
+    description: "Github token"
+    required: true
 runs:
-  using: 'node12'
-  main: 'dist/index.js'
+  using: "node12"
+  main: "dist/index.js"
