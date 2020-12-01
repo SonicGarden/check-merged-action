@@ -27,14 +27,14 @@
   "dependencies": {
     "@actions/core": "^1.2.6",
     "@actions/github": "^4.0.0",
-    "@aki77/actions-replace-comment": "^0.4.1",
+    "@aki77/actions-replace-comment": "^0.5.0",
     "execa": "^4.0.3"
   },
   "devDependencies": {
     "@types/jest": "^26.0.16",
     "@types/node": "^12.7.12",
     "@typescript-eslint/parser": "^4.9.0",
-    "@zeit/ncc": "^0.20.5",
+    "@zeit/ncc": "^0.22.3",
     "eslint": "^7.14.0",
     "eslint-plugin-github": "^4.1.1",
     "eslint-plugin-jest": "^24.1.3",

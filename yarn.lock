@@ -24,10 +24,10 @@
   dependencies:
     tunnel "0.0.6"
 
-"@aki77/actions-replace-comment@^0.4.1":
-  version "0.4.2"
-  resolved "https://registry.yarnpkg.com/@aki77/actions-replace-comment/-/actions-replace-comment-0.4.2.tgz#9a5711cf72800ad45f89cc9e63bbd334a79154e9"
-  integrity sha512-vAtBA9QF9VTmMHU6TW1vyYK0wLhYkPOSm4uOKVQBehUE0a/tCxVKb86Mu3/93r9SNpc7P1u0UZihW7pDlXGtxg==
+"@aki77/actions-replace-comment@^0.5.0":
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/@aki77/actions-replace-comment/-/actions-replace-comment-0.5.0.tgz#f26e9f6aa190a16ec7b3d5311a7090e9ccd53238"
+  integrity sha512-awZesHS4KoIPactu5hoND3oVLhadhVq9qMDkDyzrQa+p8KowHRVlsHdhwYE1qdq3XVLgdi43zBK3vtrUT36DTw==
   dependencies:
     "@octokit/rest" "^18.0.0"
 
@@ -848,10 +848,10 @@
     "@typescript-eslint/types" "4.9.0"
     eslint-visitor-keys "^2.0.0"
 
-"@zeit/ncc@^0.20.5":
-  version "0.20.5"
-  resolved "https://registry.yarnpkg.com/@zeit/ncc/-/ncc-0.20.5.tgz#a41af6e6bcab4a58f4612bae6137f70bce0192e3"
-  integrity sha512-XU6uzwvv95DqxciQx+aOLhbyBx/13ky+RK1y88Age9Du3BlA4mMPCy13BGjayOrrumOzlq1XV3SD/BWiZENXlw==
+"@zeit/ncc@^0.22.3":
+  version "0.22.3"
+  resolved "https://registry.yarnpkg.com/@zeit/ncc/-/ncc-0.22.3.tgz#fca6b86b4454ce7a7e1e7e755165ec06457f16cd"
+  integrity sha512-jnCLpLXWuw/PAiJiVbLjA8WBC0IJQbFeUwF4I9M+23MvIxTxk5pD4Q8byQBSPmHQjz5aBoA7AKAElQxMpjrCLQ==
 
 abab@^2.0.3:
   version "2.0.5"
