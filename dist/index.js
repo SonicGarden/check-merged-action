@@ -986,19 +986,19 @@ const core = __importStar(__webpack_require__(470));
 const github = __importStar(__webpack_require__(469));
 const execa_1 = __importDefault(__webpack_require__(955));
 const actions_replace_comment_1 = __importStar(__webpack_require__(395));
-const TITLE = '# :anger: Not merged!';
 const replacePrComment = (log, originBranch) => __awaiter(void 0, void 0, void 0, function* () {
     const pullRequestId = github.context.issue.number;
     if (!pullRequestId) {
         throw new Error('Cannot find the PR id.');
     }
+    const title = core.getInput('title', { required: true });
     const code = '```';
     yield actions_replace_comment_1.default({
         token: core.getInput('token', { required: true }),
         owner: github.context.repo.owner,
         repo: github.context.repo.repo,
         issue_number: pullRequestId,
-        body: `${TITLE}
+        body: `${title}
 
 [:octocat: New pull request](https://github.com/${process.env.GITHUB_REPOSITORY}/compare/${originBranch}...${process.env.GITHUB_HEAD_REF})
 
@@ -1023,7 +1023,7 @@ const deletePrComment = () => __awaiter(void 0, void 0, void 0, function* () {
         owner: github.context.repo.owner,
         repo: github.context.repo.repo,
         issue_number: pullRequestId,
-        body: TITLE,
+        body: core.getInput('title', { required: true }),
         startsWith: true
     });
 });
