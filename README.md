@@ -12,6 +12,7 @@ The action works only with pull_request event.
 
 - `token` - The GITHUB_TOKEN secret.
 - `originBranch` - Origin branch. (default: `staging`)
+- `title` - Error message. (default: `# :anger: Not merged!`)
 
 ## Example
 
