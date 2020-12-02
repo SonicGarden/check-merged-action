@@ -3,8 +3,6 @@ import * as github from '@actions/github'
 import execa from 'execa'
 import replaceComment, {deleteComment} from '@aki77/actions-replace-comment'
 
-const TITLE = '# :anger: Not merged!'
-
 const replacePrComment = async (
   log: string,
   originBranch: string
@@ -14,6 +12,7 @@ const replacePrComment = async (
     throw new Error('Cannot find the PR id.')
   }
 
+  const title = core.getInput('title', {required: true})
   const code = '```'
 
   await replaceComment({
@@ -21,7 +20,7 @@ const replacePrComment = async (
     owner: github.context.repo.owner,
     repo: github.context.repo.repo,
     issue_number: pullRequestId,
-    body: `${TITLE}
+    body: `${title}
 
 [:octocat: New pull request](https://github.com/${process.env.GITHUB_REPOSITORY}/compare/${originBranch}...${process.env.GITHUB_HEAD_REF})
 
@@ -48,7 +47,7 @@ const deletePrComment = async (): Promise<void> => {
     owner: github.context.repo.owner,
     repo: github.context.repo.repo,
     issue_number: pullRequestId,
-    body: TITLE,
+    body: core.getInput('title', {required: true}),
     startsWith: true
   })
 }
