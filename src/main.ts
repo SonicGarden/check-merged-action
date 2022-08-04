@@ -67,6 +67,7 @@ async function run(): Promise<void> {
 
     if (stdout.length > 0) {
       await replacePrComment(stdout, originBranch)
+      core.setFailed('pr branch not merged to ${originBranch}')
     } else {
       await deletePrComment()
     }
