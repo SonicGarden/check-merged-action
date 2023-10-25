@@ -31,7 +31,7 @@ jobs:
         with:
           fetch-depth: 0
 
-      - uses: SonicGarden/check-merged-action@v1
+      - uses: SonicGarden/check-merged-action@v2
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 ```
