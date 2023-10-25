@@ -1,7 +1,10 @@
 import * as core from '@actions/core'
 import * as github from '@actions/github'
-import execa from 'execa'
+import {exec} from 'child_process'
+import {promisify} from 'util'
 import replaceComment, {deleteComment} from '@aki77/actions-replace-comment'
+
+const execAsync = promisify(exec)
 
 const replacePrComment = async (
   log: string,
@@ -58,9 +61,9 @@ async function run(): Promise<void> {
       required: true
     })
 
-    await execa.command(`git fetch origin ${originBranch}`)
+    await execAsync(`git fetch origin ${originBranch}`)
 
-    const {stdout} = await execa.command(
+    const {stdout} = await execAsync(
       `git log HEAD ^origin/${originBranch} --no-merges`
     )
     core.debug(stdout)

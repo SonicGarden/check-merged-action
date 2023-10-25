@@ -26,8 +26,7 @@
   "dependencies": {
     "@actions/core": "^1.2.6",
     "@actions/github": "^6.0.0",
-    "@aki77/actions-replace-comment": "^0.6.0",
-    "execa": "^4.0.3"
+    "@aki77/actions-replace-comment": "^0.6.0"
   },
   "devDependencies": {
     "@types/node": "^20.8.9",
