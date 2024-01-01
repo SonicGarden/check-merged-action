@@ -29,7 +29,7 @@
     "@aki77/actions-replace-comment": "^0.6.0"
   },
   "devDependencies": {
-    "@types/node": "^20.8.9",
+    "@types/node": "^20.10.6",
     "@typescript-eslint/parser": "^6.9.0",
     "@vercel/ncc": "^0.38.1",
     "eslint": "^8.21.0",
